@@ -11,4 +11,18 @@ class Popcorn::Scraper
     titles
   end 
   
+  def self.get_topbox_revenue
+    wknd_rev = []
+    gross_rev = []
+    
+    @@doc.css("tbody tr td.ratingColumn").each do |w_rev|
+      if w_rev.css("span").attribute("class")
+        gross_rev << w_rev.text.strip
+      else 
+        wknd_rev << w_rev.text.strip 
+      end
+    end 
+  end 
+
+  
 end 
