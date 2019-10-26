@@ -1,7 +1,7 @@
 class Popcorn::CLI
   
   def call 
-    Popcorn::User.new
+    welcome
     #Welcome message 
     #Choose one one movie out of the top 10 box office movies 
     #give user options after showing of movies (weeknd_revenue, gross_revenue, weeks_in_office, more info link)
@@ -10,9 +10,10 @@ class Popcorn::CLI
   end 
   
   def welcome
-    print "May I have your name please:"
-    puts "Hi, #{Popcorn::User.new.name}"
-    binding.pry
+    puts "May I have your name please:"
+    puts "Hi, #{Popcorn::User.new.name}. Here's a list of the current top 10 box office movies"
+    puts
+    # binding.pry
   end 
   
 end
