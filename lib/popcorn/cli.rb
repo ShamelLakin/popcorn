@@ -21,17 +21,14 @@ class Popcorn::CLI
     Popcorn::Scraper.get_topbox_titles.each.with_index(1) do |title, index|
       puts "#{index}. #{title}"
     end 
+    puts
   end
   
   def get_stats
-    titles = Popcorn::Scraper.titles
-    weekend = Popcorn::Scraper.weekend
-    gross = Popcorn::Scraper.gross
-    weeks = Popcorn::Scraper.weeks
     print "Enter the number of the movie you wish to find the stats on: "
     choice = Popcorn::User.get_user_choice - 1
     puts
-    puts "Ok! #{titles[choice]}'s weekend gross revenue is #{weekend[choice]} and it's overall gross revenue is #{gross[choice]}. It's been in Top Box Office Status for #{weeks[choice]} week/s."
+    puts "Ok! #{Popcorn::Scraper.get_topbox_titles[choice]}'s weekend gross revenue is #{Popcorn::Scraper.get_topbox_revenues[choice]} and it's overall gross revenue is #{Popcorn::Scraper.gross[choice]}. It's been in Top Box Office Status for #{Popcorn::Scraper.weeks[choice]} week/s."
     puts
   end 
    
