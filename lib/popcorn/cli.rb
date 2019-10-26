@@ -10,7 +10,9 @@ class Popcorn::CLI
   end 
   
   def welcome
-    #nil
+    print "May I have your name please:"
+    puts "Hi, #{Popcorn::User.new.name}"
+    binding.pry
   end 
   
 end
