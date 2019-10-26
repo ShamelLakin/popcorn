@@ -12,4 +12,9 @@ class Popcorn::User
     user_choice
   end 
   
+  def more_info?
+    #ask the user to enter another number for more info or press exit to leave
+    #Say goodbye
+    #make sure thaey do not type in gibba jabba
+  end 
 end 
