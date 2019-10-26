@@ -3,6 +3,7 @@ class Popcorn::CLI
   def call 
     welcome 
     show_top_ten 
+    get_stats
     #give user options for more info link)
     #show results
     #conclude with more info
@@ -23,9 +24,17 @@ class Popcorn::CLI
   end
   
   def get_stats
+    titles = Popcorn::Scraper.titles
+    weekend = Popcorn::Scraper.weekend
+    gross = Popcorn::Scraper.gross
+    weeks = Popcorn::Scraper.weeks
     print "Enter the number of the movie you wish to find the stats on: "
+    choice = Popcorn::User.get_user_choice - 1
+    puts
+    puts "Ok! #{titles[choice]}'s weekend gross revenue is #{weekend[choice]} and it's overall gross revenue is #{gross[choice]}. It's been in Top Box Office Status for #{weeks[choice]} week/s."
+    puts
   end 
-  
+   
 end
 
 

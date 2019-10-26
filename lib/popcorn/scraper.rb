@@ -32,11 +32,6 @@ class Popcorn::Scraper
     end
   end 
   
-  def self.use_users_choice
-    choice = Popcorn::User.get_user_choice - 1
-    puts "Ok! #{titles[choice]}'s weekend gross revenue is #{weekend[choice]} and it's overall gross revenue is #{gross[choice]}. It's been in Top Box Office Status for #{weeks[choice]} week/s."
-  end
-  
   def titles 
     @@titles
   end
