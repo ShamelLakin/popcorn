@@ -1,8 +1,9 @@
 class Popcorn::CLI
   
   def call 
-    welcome 
-    show_top_ten
+    # welcome 
+    # show_top_ten
+    Popcorn::Scraper.get_topbox_revenues
     #Choose one one movie out of the top 10 box office movies for further info 
     #give user options after showing of movies (weeknd_revenue, gross_revenue, weeks_in_office, more info link)
     #show results

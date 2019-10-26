@@ -11,7 +11,7 @@ class Popcorn::Scraper
     titles
   end 
   
-  def self.get_topbox_revenue
+  def self.get_topbox_revenues
     wknd_rev = []
     gross_rev = []
     
@@ -21,8 +21,9 @@ class Popcorn::Scraper
       else 
         wknd_rev << w_rev.text.strip 
       end
+      binding.pry
     end 
   end 
-
+  # Ok! #{title}'s weekend gross revenue is #{weekend rev} and it's overall gross revenue is #{gross rev}. It's been in Top Box Office Status for #{week} weeks.
   
 end 
