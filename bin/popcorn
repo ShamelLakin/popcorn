@@ -12,3 +12,9 @@ require "popcorn"
 
 require "irb"
 IRB.start(__FILE__)
+
+require './config/environment.rb
+
+Popcorn::CLI.new.call
+
+
