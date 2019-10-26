@@ -7,10 +7,8 @@ class Popcorn::User
     @name = @name[0].upcase + @name[1..-1].downcase
   end 
   
-  def self.get_user_name
-    @name
+  def self.get_user_choice
     
-  end
-  
+  end 
   
 end 

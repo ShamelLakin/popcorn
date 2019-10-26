@@ -21,8 +21,8 @@ class Popcorn::Scraper
       else 
         wknd_rev << w_rev.text.strip 
       end
-      binding.pry
     end 
+    # binding.pry
   end 
   # Ok! #{title}'s weekend gross revenue is #{weekend rev} and it's overall gross revenue is #{gross rev}. It's been in Top Box Office Status for #{week} weeks.
   
