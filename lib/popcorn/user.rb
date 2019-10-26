@@ -8,9 +8,7 @@ class Popcorn::User
   end 
   
   def self.get_user_choice
-    print "Enter the number of the movie you wish to find the stats on: "
     user_choice = gets.chomp.to_i 
-    puts
     user_choice
   end 
   
