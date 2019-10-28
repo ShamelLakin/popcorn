@@ -42,12 +42,12 @@ class Popcorn::Scraper
     @@weeks
   end 
   
-  # def get_more_info
-  #   complete_links = ids.split.collect do |id|
-  # Nokogiri::HTML(open("https://www.imdb.com#{id}")).css("div.summary_text").text.strip
-  # @@info << complete_links
-  #   end
-  # end
+  def self.get_more_info
+    complete_links = ids.split.collect do |id|
+  Nokogiri::HTML(open("https://www.imdb.com#{id}")).css("div.summary_text").text.strip
+  @@info << complete_links
+    end
+  end
   
 end 
 
