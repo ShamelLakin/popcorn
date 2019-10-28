@@ -33,13 +33,6 @@ class Popcorn::CLI
     puts
     # puts "Please enter another number of the movie you wish to find the stats on: "
   end 
-  
-  def info_getter
-    Popcorn::Scraper.get_more_info.each.with_index(1) do |info, index|
-      puts "#{index}. #{info}"
-    end
-    puts
-  end 
    
 end
 

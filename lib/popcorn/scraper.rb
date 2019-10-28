@@ -7,7 +7,7 @@ class Popcorn::Scraper
   @@weekend = []
   @@gross = []
   @@weeks = []
-  # @@info =[]
+  @@info =[]
  
   def self.get_topbox_titles
     @@doc.css('tbody tr td.titleColumn a').each do |title|
@@ -42,11 +42,12 @@ class Popcorn::Scraper
     @@weeks
   end 
   
-  def self.get_more_info
+  def self.get_movie_synopsis
     complete_links = ids.split.collect do |id|
-  Nokogiri::HTML(open("https://www.imdb.com#{id}")).css("div.summary_text").text.strip
-  @@info << complete_links
+      Nokogiri::HTML(open("https://www.imdb.com#{id}")).css("div.summary_text").text.strip
+        @@info << complete_links
     end
+    @@info
   end
   
 end 
