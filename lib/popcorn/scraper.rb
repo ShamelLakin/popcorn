@@ -43,6 +43,7 @@ class Popcorn::Scraper
   end 
   
   def self.get_movie_synopsis
+    ids = "/title/tt7286456 /title/tt4777008 /title/tt1620981 /title/tt1560220 /title/tt10039344 /title/tt7390646 /title/tt1025100 /title/tt7984734 /title/tt2140507 /title/tt6324278"
     complete_links = ids.split.collect do |id|
       Nokogiri::HTML(open("https://www.imdb.com#{id}")).css("div.summary_text").text.strip
         @@info << complete_links
