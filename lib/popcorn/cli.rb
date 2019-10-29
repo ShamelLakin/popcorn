@@ -25,15 +25,36 @@ class Popcorn::CLI
     puts
   end
   
+  # def get_stats
+  #   print "Enter the number of the movie you wish to find the stats on: "
+  #   choice = Popcorn::User.get_user_choice - 1
+  #   puts
+  #   puts "Ok! #{Popcorn::Scraper.get_topbox_titles[choice]}'s weekend gross revenue is #{Popcorn::Scraper.get_topbox_weekend[choice]} and it's overall gross revenue is #{Popcorn::Scraper.get_topbox_gross[choice]}. It's been in Top Box Office Status for #{Popcorn::Scraper.get_topbox_weeks[choice]} week/s.\n\nSynopsis >\n====================\n\n#{Popcorn::Scraper.get_movie_synopsis[choice]}"
+  #   puts
+  #   puts "Please enter another number of the movie you wish to find the stats on: "
+  # end 
+  
+  
   def get_stats
-    print "Enter the number of the movie you wish to find the stats on: "
+    choice = nil
+    # choice = Popcorn::User.get_user_choice - 1
+  
+  while choice.to_s != 'exit'
     choice = Popcorn::User.get_user_choice - 1
-    puts
-    puts "Ok! #{Popcorn::Scraper.get_topbox_titles[choice]}'s weekend gross revenue is #{Popcorn::Scraper.get_topbox_weekend[choice]} and it's overall gross revenue is #{Popcorn::Scraper.get_topbox_gross[choice]}. It's been in Top Box Office Status for #{Popcorn::Scraper.get_topbox_weeks[choice]} week/s.\n\nSynopsis >\n====================\n\n#{Popcorn::Scraper.get_movie_synopsis[choice]}"
-    puts
-    # puts "Please enter another number of the movie you wish to find the stats on: "
+      print "Enter the number of the movie you wish to find the stats on: "
+      puts
+    
+    if choice 
+      puts "Ok! #{Popcorn::Scraper.get_topbox_titles[choice]}'s weekend gross revenue is #{Popcorn::Scraper.get_topbox_weekend[choice]} and it's overall gross revenue is #{Popcorn::Scraper.get_topbox_gross[choice]}. It's been in Top Box Office Status for #{Popcorn::Scraper.get_topbox_weeks[choice]} week/s.\n\nSynopsis >\n====================\n\n#{Popcorn::Scraper.get_movie_synopsis[choice]}"
+      
+      # puts "Please enter another number of the movie you wish to find the stats on: "
+    elsif choice == "list"
+      show_top_ten
+    else
+      puts "To continue type list or to leave type exit"
+      end
+    end
   end 
-   
 end
 
 
