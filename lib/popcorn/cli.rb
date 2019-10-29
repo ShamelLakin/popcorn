@@ -22,7 +22,7 @@ class Popcorn::CLI
     Popcorn::Scraper.get_topbox_titles.each.with_index(1) do |title, index|
       puts "#{index}. #{title}"
     end 
-    puts
+     puts
   end
   
   # def get_stats
@@ -55,6 +55,10 @@ class Popcorn::CLI
       end
     end
   end 
+  
+   def goodbye
+    puts "See you next time #{name}, Enjoy the show!"
+   end 
 end
 
 
