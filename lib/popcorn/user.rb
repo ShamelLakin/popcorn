@@ -8,7 +8,7 @@ class Popcorn::User
   end 
   
   def self.get_user_choice
-    user_choice = gets.chomp.to_i 
+    user_choice = gets.chomp
     user_choice
   end 
   

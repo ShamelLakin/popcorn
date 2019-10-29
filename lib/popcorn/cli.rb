@@ -4,9 +4,7 @@ class Popcorn::CLI
     welcome 
     show_top_ten 
     get_stats
-    #give user options for more info link)
-    #show results
-    #conclude with more info
+    goodbye
   end 
   
   def welcome
@@ -25,40 +23,30 @@ class Popcorn::CLI
      puts
   end
   
-  # def get_stats
-  #   print "Enter the number of the movie you wish to find the stats on: "
-  #   choice = Popcorn::User.get_user_choice - 1
-  #   puts
-  #   puts "Ok! #{Popcorn::Scraper.get_topbox_titles[choice]}'s weekend gross revenue is #{Popcorn::Scraper.get_topbox_weekend[choice]} and it's overall gross revenue is #{Popcorn::Scraper.get_topbox_gross[choice]}. It's been in Top Box Office Status for #{Popcorn::Scraper.get_topbox_weeks[choice]} week/s.\n\nSynopsis >\n====================\n\n#{Popcorn::Scraper.get_movie_synopsis[choice]}"
-  #   puts
-  #   puts "Please enter another number of the movie you wish to find the stats on: "
-  # end 
-  
   
   def get_stats
-    choice = nil
-    # choice = Popcorn::User.get_user_choice - 1
   
-  while choice.to_s != 'exit'
-    choice = Popcorn::User.get_user_choice - 1
-      print "Enter the number of the movie you wish to find the stats on: "
-      puts
-    
-    if choice 
-      puts "Ok! #{Popcorn::Scraper.get_topbox_titles[choice]}'s weekend gross revenue is #{Popcorn::Scraper.get_topbox_weekend[choice]} and it's overall gross revenue is #{Popcorn::Scraper.get_topbox_gross[choice]}. It's been in Top Box Office Status for #{Popcorn::Scraper.get_topbox_weeks[choice]} week/s.\n\nSynopsis >\n====================\n\n#{Popcorn::Scraper.get_movie_synopsis[choice]}"
-      
-      # puts "Please enter another number of the movie you wish to find the stats on: "
-    elsif choice == "list"
-      show_top_ten
-    else
-      puts "To continue type list or to leave type exit"
+    while true
+      puts "\nEnter the number of the movie you wish to find the stats on or type exit: "
+      place_holder = Popcorn::User.get_user_choice
+      choice = place_holder.class == "Integer" ? place_holder = place_holder - 1 : place_holder.to_s  
+      if choice == "exit"
+        exit!
+      else 
+        puts "\n\nOk! #{Popcorn::Scraper.get_topbox_titles[choice]}'s weekend gross revenue is #{Popcorn::Scraper.get_topbox_weekend[choice]} and it's overall gross revenue is #{Popcorn::Scraper.get_topbox_gross[choice]}. It's been in Top Box Office Status for #{Popcorn::Scraper.get_topbox_weeks[choice]} week/s.\n\nSynopsis >\n====================\n\n#{Popcorn::Scraper.get_movie_synopsis[choice]}"
       end
     end
+    
   end 
   
-   def goodbye
+  
+  # def show_another?
+    
+  # end 
+   
+  def goodbye
     puts "See you next time #{name}, Enjoy the show!"
-   end 
+  end 
 end
 
 
