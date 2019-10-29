@@ -1,9 +1,7 @@
 HELLO WORLD
 # Popcorn
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/popcorn`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to Popcorn your new gem! This gem enables you to list the top ten box office movies along with their weekend revenue and their overall gross. Popcorn also gives you a brief synopsis of the movie so the user can figure which movie is the right one.
 
 ## Installation
 
@@ -23,7 +21,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Use this gem to get you started on the top ten box office titles and more...
 
 ## Development
 
