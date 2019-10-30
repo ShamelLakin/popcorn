@@ -8,7 +8,7 @@ Welcome to Popcorn your new ruby gem! This gem enables you to list the top ten b
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'popcorn'
+gem 'popcorn_love'
 ```
 
 And then execute:
@@ -17,7 +17,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install popcorn
+    $ gem install popcorn_love
 
 ## Usage
 
@@ -39,4 +39,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Popcorn project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'shamel'/popcorn/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Popcorn project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'shamel'/popcorn_love/blob/master/CODE_OF_CONDUCT.md).
