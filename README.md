@@ -1,7 +1,7 @@
 HELLO WORLD
-# Popcorn - Ruby
+# Popcorn_love - Ruby
 
-Welcome to Popcorn your new ruby gem! This gem enables you to list the top ten box office movies along with their weekend revenue and their overall gross. Popcorn also gives you a brief synopsis of the movie so the user can figure which movie is the right one.
+Welcome to Popcorn_love your new ruby gem! This gem enables you to list the top ten box office movies along with their weekend revenue and their overall gross. Popcorn_love also gives you a brief synopsis of the movie so the user can figure which movie is the right one.
 
 ## Installation
 
