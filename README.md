@@ -1,4 +1,3 @@
-HELLO WORLD
 # Popcorn_love - Ruby
 
 Welcome to Popcorn_love your new ruby gem! This gem enables you to list the top ten box office movies along with their weekend revenue and their overall gross. Popcorn_love also gives you a brief synopsis of the movie so the user can figure which movie is the right one.
@@ -8,7 +7,7 @@ Welcome to Popcorn_love your new ruby gem! This gem enables you to list the top 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'popcorn'
+gem 'popcorn_love'
 ```
 
 And then execute:
@@ -17,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install popcorn
+    $ gem install popcorn_love
 
 ## Usage
 
