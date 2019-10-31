@@ -32,7 +32,7 @@ class Popcorn::CLI
       if choice == "exit"
         goodbye
       else
-        choice = choice.to_i
+        choice = choice.to_i - 1
         puts "\n\nOk! #{Popcorn::Scraper.get_topbox_titles[choice]}'s weekend gross revenue is #{Popcorn::Scraper.get_topbox_weekend[choice]} and it's overall gross revenue is #{Popcorn::Scraper.get_topbox_gross[choice]}. It's been in Top Box Office Status for #{Popcorn::Scraper.get_topbox_weeks[choice]} week/s.\n\nSynopsis >\n====================\n\n#{Popcorn::Scraper.get_movie_synopsis[choice]}"
       end
     end
