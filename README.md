@@ -8,7 +8,7 @@ Welcome to Popcorn_love your new ruby gem! This gem enables you to list the top 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'popcorn_love'
+gem 'popcorn'
 ```
 
 And then execute:
@@ -17,7 +17,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install popcorn_love
+    $ gem install popcorn
 
 ## Usage
 
@@ -31,7 +31,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/'shamel'/popcorn_love. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/'shamel'/popcorn. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
