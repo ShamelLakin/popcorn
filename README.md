@@ -21,7 +21,9 @@ Or install it yourself as:
 
 ## Usage
 
-Use this gem to get you started on the top ten box office titles and more...
+To run the program type in popcorn:
+   
+    $ popcorn
 
 ## Development
 
