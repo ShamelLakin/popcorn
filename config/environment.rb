@@ -6,7 +6,7 @@ require 'pry'
 
 # Main environment files 
 
-require './lib/popcorn/version.rb'
-require './lib/popcorn/scraper.rb'
-require './lib/popcorn/user.rb'
-require './lib/popcorn/cli.rb'
+require_relative '../lib/popcorn/version.rb'
+require_relative '../lib/popcorn/scraper.rb'
+require_relative '../lib/popcorn/user.rb'
+require_relative '../lib/popcorn/cli.rb'
