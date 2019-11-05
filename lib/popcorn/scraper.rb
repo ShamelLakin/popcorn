@@ -5,40 +5,41 @@ class Popcorn::Scraper
    Nokogiri::HTML(open("https://www.imdb.com/chart/boxoffice?ref_=nv_ch_cht"))
  end 
  
- def scrape_movie_index(m)
+ def scrape_movie_index
     self.get_page.css("tbody tr")
+    binding.pry
  end 
  
  def make_movies
-   scrape_movie_index.each do |m|
-      Popcorn::Movies.new_from_index_page(m)
+    scrape_movie_index.each do |m|
+      Popcorn::Movie.new_from_index_page(m)
     end
  end
  
-  def self.get_topbox_titles
-    @@doc.css('tbody tr td.titleColumn a').each do |title|
-      @@titles << title.text
-    end
-    @@titles
-  end 
+  # def self.get_topbox_titles
+  #   @@doc.css('tbody tr td.titleColumn a').each do |title|
+  #     @@titles << title.text
+  #   end
+  #   @@titles
+  # end 
   
-  def self.get_topbox_weekend
-    @@doc.css("tbody tr td.ratingColumn").each do |w_rev|
-      if !(w_rev.css("span").attribute("class"))
-        @@weekend << w_rev.text.strip 
-      end
-    end 
-    @@weekend
-  end 
+  # def self.get_topbox_weekend
+  #   @@doc.css("tbody tr td.ratingColumn").each do |w_rev|
+  #     if !(w_rev.css("span").attribute("class"))
+  #       @@weekend << w_rev.text.strip 
+  #     end
+  #   end 
+  #   @@weekend
+  # end 
   
-   def self.get_topbox_gross
-    @@doc.css("tbody tr td.ratingColumn").each do |w_rev|
-      if w_rev.css("span").attribute("class")
-        @@gross << w_rev.text.strip
-      end
-    end 
-    @@gross
-  end 
+  # def self.get_topbox_gross
+  #   @@doc.css("tbody tr td.ratingColumn").each do |w_rev|
+  #     if w_rev.css("span").attribute("class")
+  #       @@gross << w_rev.text.strip
+  #     end
+  #   end 
+  #   @@gross
+  # end 
   
   #-============
   
