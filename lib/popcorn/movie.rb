@@ -10,7 +10,7 @@ class Popcorn::Movie
    @@all = []
 
   def self.new_from_index_page(m)
-   @@all << self.new(
+    self.all << self.new(
       m.css("td.titleColumn").text.strip,
       m.css("td.ratingColumn").text.strip,
       m.css("td.ratingColumn").text.strip,

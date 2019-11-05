@@ -1,19 +1,33 @@
 class Popcorn::Scraper
  
+  def get_page
+    Nokogiri::HTML(open("https://www.imdb.com/chart/boxoffice?ref_=nv_ch_cht"))
+  end 
  
- def get_page
-   Nokogiri::HTML(open("https://www.imdb.com/chart/boxoffice?ref_=nv_ch_cht"))
- end 
- 
- def scrape_movie_index
+  def scrape_movie_index
     self.get_page.css("tbody tr")
- end 
+  end 
  
- def make_movies
-    scrape_movie_index.each do |m|
-      Popcorn::Movie.new_from_index_page(m)
+  def make_movies
+    movie = Popcorn::Movie
+      scrape_movie_index.each do |m|
+        movie.new_from_index_page(m)
+      end
+  end
+  
+  # def titles
+  #   make_movies.each do |mt|
+  #     puts mt.css("td.titleColumn").text.strip
+  #   end
+  # end
+  
+  def wknd
+    make_movies.each do |mt|
+      puts mt.css("td.ratingColumn").text.strip
     end
- end
+    binding.pry
+  end
+  
  
   # def self.get_topbox_titles
   #   @@doc.css('tbody tr td.titleColumn a').each do |title|
@@ -61,7 +75,6 @@ class Popcorn::Scraper
 #     @@info
 #   end
     
-  
 end 
 
 
