@@ -2,4 +2,4 @@
 
 require_relative '../config/environment.rb'
 
-Popcorn::Scraper.scrape_movie_index
+Popcorn::Scraper.new.make_movies

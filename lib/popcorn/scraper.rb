@@ -7,7 +7,6 @@ class Popcorn::Scraper
  
  def scrape_movie_index
     self.get_page.css("tbody tr")
-    binding.pry
  end 
  
  def make_movies
