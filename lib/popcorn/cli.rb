@@ -16,11 +16,10 @@ class Popcorn::CLI
   end 
   
   def show_top_ten
-    top_ten = Popcorn::Scraper.new
-    top_ten.titles.each.with_index(1) do |title, index|
+    @top_ten = Popcorn::Scraper.new
+    @top_ten.titles.each.with_index(1) do |title, index|
       puts "#{index}. #{title}"
     end 
-    binding.pry
   end
   
   
@@ -34,7 +33,7 @@ class Popcorn::CLI
         goodbye
       else
         choice = choice.to_i - 1
-        puts "\n\nOk! #{Popcorn::Scraper.get_topbox_titles[choice]}'s weekend gross revenue is #{Popcorn::Scraper.get_topbox_weekend[choice]} and it's overall gross revenue is #{Popcorn::Scraper.get_topbox_gross[choice]}. It's been in Top Box Office Status for #{Popcorn::Scraper.get_topbox_weeks[choice]} week/s.\n\nSynopsis >\n====================\n\n#{Popcorn::Scraper.get_movie_synopsis[choice]}"
+        puts "\n\nOk! #{@top_ten.titles[choice]}'s weekend gross revenue is #{@top_ten.wnkds[choice]} and it's overall gross revenue is #{@top_ten.gross[choice]}. It's been in Top Box Office Status for #{@top_ten.weeks[choice]} week/s.\n\nSynopsis >\n====================\n\n#{@top_ten.synopsis[choice]}"
       end
     end
     
