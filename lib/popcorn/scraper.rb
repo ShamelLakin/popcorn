@@ -1,4 +1,6 @@
 class Popcorn::Scraper
+  
+  attr_accessor :titles
  
   def get_page
     Nokogiri::HTML(open("https://www.imdb.com/chart/boxoffice?ref_=nv_ch_cht"))
@@ -9,23 +11,27 @@ class Popcorn::Scraper
   end 
  
   def make_movies
-    movie = Popcorn::Movie
       scrape_movie_index.each do |m|
-        movie.new_from_index_page(m)
+        Popcorn::Movie.all << Popcorn::Movie.new_from_index_page(m)
       end
   end
   
-  # def titles
-  #   make_movies.each do |mt|
-  #     puts mt.css("td.titleColumn").text.strip
-  #   end
-  # end
+  def titles
+    titles = make_movies.collect do |mt|
+      mt.css("td.titleColumn").text.strip
+    end
+  end
   
   def wknd
-    make_movies.each do |mt|
-      puts mt.css("td.ratingColumn").text.strip
+    make_movies.each do |mw|
+      puts mw.css("td.ratingColumn:nth-of-type(odd)").text.strip
     end
-    binding.pry
+  end
+  
+  def gross
+    make_movies.each do |mg|
+      puts mg.css("td.ratingColumn:nth-of-type(even)").text.strip
+    end
   end
   
  

@@ -16,10 +16,11 @@ class Popcorn::CLI
   end 
   
   def show_top_ten
-    Popcorn::Scraper.get_topbox_titles.each.with_index(1) do |title, index|
+    top_ten = Popcorn::Scraper.new
+    top_ten.titles.each.with_index(1) do |title, index|
       puts "#{index}. #{title}"
     end 
-     puts
+    binding.pry
   end
   
   
